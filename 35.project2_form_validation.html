@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .margin{
+            margin: 0px 55px;
+            margin-bottom: 20px;
+        }
+        .margin_two{
+            margin-left: 55px;
+            margin-bottom: 15px;
+        }
+        .margin_bottom{
+            margin: 0px;
+        }
+        .div_width{
+            width: 750px;
+        }
+        .div_margin{
+            margin-bottom: 5px;
+        }
+        #name,#phone,#email,#box{
+            width:350px;
+        }
+        #quantity{
+            width: 160px;
+        }
+        .font_a{
+            color: rgb(25, 13, 128);
+        }
+        .font_b{
+            color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <h2 class="font_a margin_bottom">A Simple Form</h2>
+        </div>
+        <div>
+            <h4 class="font_b margin_bottom"><em>Form Fundamentals</em></h4>
+        </div>
+        <div>
+            <fieldset class="div_width">
+                <legend>Customer Info</legend>
+                <div class="margin" >
+                    <span>Name: </span><input type="text" id="name" name="name" placeholder="Enter your name" autofocus>
+                    <br>
+                    <br>
+                    <span>Telephone: </span><input type="text" id="phone" name="phone" placeholder="Pattern: 1-234-567-8910" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    <br>
+                    <br>
+                    <span>Email address: </span><input type="text" id="email" name="email" placeholder="Enter your email address">
+                </div>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset class="div_width div_margin">
+                <legend>Books</legend>
+                <div class="margin_two">
+                    <span></span><input type="text" id="box">
+                    <span>Quantity (Maximum 5):</span><input type="number" id="quantity" name="quantity" min="1" max="5">
+                </div>
+                </fieldset>
+        </div>
+        <div>
+            <input type="submit" value="Submit"> 
+            <p><dd>©2011 Acme United All rights reserved</dd></p>
+        </div>
+    </div>    
+</body>
+</html>
