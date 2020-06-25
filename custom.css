@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+body{
+    background: #DCEBFC;
+    font-family: 'Pacifico', cursive;
+}
+.container{
+    background: #FFF;
+    padding: 4.5rem
+}
+.footer {
+    font-family: 'Shadows Into Light', cursive;
+}
+.front-icon{
+    display: block;
+    color:#FFFFFF;
+    padding:3rem;
+    background:#4F85D7;
+}
+.front-icon i{
+    font-size: 10rem;
+}
