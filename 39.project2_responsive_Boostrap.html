@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="39.project2_responsive_Boostrap.css">
+</head>
+
+<body>
+    <!-- Start Header -->
+    <header id="header" class="page-header">
+        <div class="container main-header">
+            <div class="row">
+                <div class="col-sm">
+                    <div id="nw-weather-micro" class="api">
+                        <a href="/weather" title="Weather" class="weather-cwidget">
+                            <picture style="display:inherit;">
+                                <source srcset="https://g.newsweek.com/img/weather/34.webp" type="image/webp">
+                                <img src="https://g.newsweek.com/img/weather/34.png" alt="Fair" class="weather-icon">
+                            </picture>&nbsp;&nbsp;33°
+                            <span class="weather-country">Mueang Chon Buri, TH&nbsp;&nbsp;
+                                <picture style="display:inherit;">
+                                    <source srcset="https://g.newsweek.com/img/weather/ic-white-arrow.webp"
+                                        type="image/webp">
+                                    <img src="https://g.newsweek.com/img/weather/ic-white-arrow.png"
+                                        class="weather-arrow">
+                                </picture>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="date">
+                        <date>Sun, Jul 26, 2020</date>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="logo">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 395.6 60"
+                            style="enable-background:new 0 0 395.6 60;" xml:space="preserve">
+                            <g>
+                                <path class="st0"
+                                    d="M58.7,10.8h-5.6v48.3H42.8l-25.1-33v22.1h5.6v10.8H0V48.3h5.6V10.8H0V0h17.6L41,30.7V10.8h-5.6V0h23.2	L58.7,10.8L58.7,10.8z M95.8,38c0,0.9,0,1.8-0.1,2.7H70.3c-0.7,8.2,2.4,10.6,7.1,10.6c3.9,0,6.9-2.6,6.9-6.6h11	c-0.3,7.2-4,15.4-18.5,15.4c-14.5,0-21.3-10.5-21.3-22.1c0-10.5,7-21.6,21-21.6C89.9,16.3,95.8,25.6,95.8,38 M159,27.3h-3.7	l-9.4,31.8h-12.5l-5.9-17.4l-5.3,17.4h-12.8L98.8,27.4h-3.7V16.6h22.1v10.7h-5.6l5.8,16.9l7.6-27.6h6.8l9.3,27.6l5-16.9h-5.6V16.6	H159L159,27.3L159,27.3z M174.5,27.8c0,1.5,1.2,2.5,5.4,3.9l6,2c5.5,1.8,12.1,5.9,12.1,13.4c0,8.8-6.6,13-14.7,13	c-6.5,0-11.5-3.2-12.9-4.6V59h-10.8V44.4h10.6c0.3,4.8,4.6,7.3,8.5,7.3c3.2,0,4.7-1.4,4.7-3c0-2-1.2-3.1-6.5-4.8l-5.3-1.8	c-5.4-1.7-11.4-5.7-11.4-12.8c0-8.7,7.7-13.1,14.3-13.1c6.8,0,10.1,1.9,11.8,3.8l0.1-3.3H197v13.3h-11.2c-0.2-3.6-3.7-5.2-7.2-5.2	C175.8,24.8,174.5,26.1,174.5,27.8 M262.8,27.3h-3.7l-9.4,31.8h-12.5l-5.9-17.4L226,59.1h-12.8l-10.6-31.7h-3.7V16.6h22.1v10.7	h-5.6l5.8,16.9l7.6-27.6h6.8l9.3,27.7l5-16.9h-5.6V16.6h18.5V27.3z M302,37.9c0,0.9,0,1.8-0.1,2.7h-25.4	c-0.7,8.2,2.4,10.6,7.1,10.6c3.9,0,6.9-2.6,6.9-6.6h11c-0.3,7.2-4,15.4-18.5,15.4c-14.5,0-21.3-10.5-21.3-22.1	c0-10.5,7-21.6,21-21.6C296.1,16.2,302,25.5,302,37.9 M343.9,37.8c0,0.9,0,1.8-0.1,2.7h-25.4c-0.7,8.2,2.4,10.6,7.1,10.6	c3.9,0,6.9-2.6,6.9-6.6h11c-0.3,7.2-4,15.4-18.5,15.4c-14.5,0-21.3-10.5-21.3-22.1c0-10.5,7-21.6,21-21.6	C338,16.1,343.9,25.4,343.9,37.8 M389.9,59h-12.8l-13.3-17.3l-4.3,3.2v3.4h3.8V59h-19.6V48.3h3.7V10.6h-5.6V0h17.8v33.9l8.9-6.5	h-5.6V16.6h23.9v10.8h-3.7l-9.3,7l10.7,13.9h5.6L389.9,59L389.9,59z M395.6,56.6c0,0.5-0.1,0.9-0.4,1.2c-0.2,0.4-0.5,0.7-0.9,0.9	c-0.4,0.2-0.8,0.4-1.3,0.4c-0.5,0-0.9-0.1-1.2-0.4c-0.4-0.2-0.7-0.5-0.9-0.9c-0.2-0.4-0.4-0.8-0.4-1.2c0-0.5,0.1-0.9,0.4-1.2	c0.2-0.4,0.5-0.7,0.9-0.9c0.4-0.2,0.8-0.4,1.2-0.4c0.5,0,0.9,0.1,1.3,0.4c0.4,0.2,0.7,0.5,0.9,0.9	C395.5,55.8,395.6,56.2,395.6,56.6 M394.6,58c0.4-0.4,0.6-0.9,0.6-1.4c0-0.6-0.2-1-0.6-1.4s-0.9-0.6-1.4-0.6s-1,0.2-1.4,0.6	c-0.4,0.4-0.6,0.9-0.6,1.4c0,0.6,0.2,1,0.6,1.4c0.4,0.4,0.9,0.6,1.4,0.6S394.2,58.4,394.6,58 M393.6,56.8c0.1,0.1,0.2,0.1,0.2,0.1	c0.1,0.1,0.2,0.2,0.2,0.3c0,0,0.2,0.3,0.4,0.8h-0.8c-0.3-0.5-0.4-0.8-0.5-0.9c-0.1-0.1-0.2-0.2-0.3-0.2c0,0-0.1,0-0.1,0v1.1h-0.6	v-2.6h1.2c0.4,0,0.6,0.1,0.7,0.2c0.2,0.2,0.2,0.3,0.2,0.6c0,0.2-0.1,0.4-0.2,0.5C393.9,56.6,393.8,56.7,393.6,56.8 M393.5,56.3	c0.1-0.1,0.1-0.2,0.1-0.3s-0.1-0.2-0.1-0.3c-0.1-0.1-0.2-0.1-0.4-0.1h-0.3v0.7h0.3C393.3,56.4,393.4,56.4,393.5,56.3 M318.4,33.5	h13.9c0-6-3.9-8.4-6.8-8.4C322.1,25.2,318.6,27.9,318.4,33.5 M276.5,33.6h13.9c0-6-3.9-8.4-6.8-8.4C280.3,25.2,276.8,28,276.5,33.6 M70.3,33.7h13.9c0-6-3.9-8.4-6.8-8.4C74.1,25.3,70.6,28.1,70.3,33.7">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="right-top"><button class="pelcro-login-button" id="pelcro-login-button">Login</button>
+                        <button class="pelcro-subscribe-button">Subscribe</button>
+                        <script>if (getCookie('nwsucrp')) { document.body.className += ' pelcro-subscribed'; document.getElementById("pelcro-login-button").innerHTML = "My Account"; }
+                            else document.getElementById("pelcro-login-button").innerHTML = "LOGIN";</script>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="row">
+                <nav class="header-bottom">
+                    <div class="flex-md jc-c">
+                        <form action="https://www.newsweek.com/search/site/" method="post" id="search-block-form--2"
+                            accept-charset="UTF-8" style="display: none;">
+                            <div>
+                                <div class="container-inline">
+                                    <div class="form-item form-type-textfield form-item-search-block-form"><label
+                                            class="element-invisible" for="edit-search-block-form--4">Search </label>
+                                        <input title="Enter the terms you wish to search for." placeholder="Search"
+                                            type="text" id="edit-search-block-form--4" name="search_block_form" value=""
+                                            size="15" maxlength="128" class="form-text"></div>
+                                    <div class="form-actions form-wrapper" id="edit-actions--2"><input type="submit"
+                                            id="edit-submit--2" name="op" value="Search" class="form-submit"></div>
+                                    <input type="hidden" name="form_build_id"
+                                        value="form-fZ682WsdOVy0CvQPbIUL2T6In25EQtbU6DClgu3ttr8"><input type="hidden"
+                                        name="form_token" value="NjTiMzKKqA3lZiZaca71FcNN-AlbGkwHKY6-BFpKd3U"><input
+                                        type="hidden" name="form_id" value="search_block_form">
+                                </div>
+                            </div>
+                        </form>
+                        <ul class="page-nav">
+                            <li class="first leaf  active-trail"><a href="https://www.newsweek.com/us" title="">U.S.</a>
+                            </li>
+                            <li class="leaf "><a href="https://www.newsweek.com/world" title="">World</a></li>
+                            <li class="leaf "><a href="https://www.newsweek.com/business" title="">Business</a></li>
+                            <li class="leaf "><a href="https://www.newsweek.com/tech-science" title="">Tech &amp;
+                                    Science</a></li>
+                            <li class="leaf "><a href="https://www.newsweek.com/culture" title="">Culture</a></li>
+                            <li class="leaf "><a href="https://www.newsweek.com/newsgeek" title="">Newsgeek</a></li>
+                            <li class="leaf "><a href="https://www.newsweek.com/sports" title="">Sports</a></li>
+                            <li class="leaf "><a href="https://www.newsweek.com/health" title="">Health</a></li>
+                            <li class="leaf "><a href="https://www.newsweek.com/the-debate" title="">The Debate</a></li>
+                            <li class="leaf "><a href="https://www.newsweek.com/vantage" title="">Vantage</a></li>
+                            <li class="last leaf "><a href="https://www.newsweek.com/weather" title="">Weather</a></li>
+                        </ul>
+                    </div>
+                    <div id="amp_suggestions_container1" class="marketplace-suggestion"></div>
+                    <div class="trending-topics-wrapper">
+                        <ul class="trending-topics">
+                            <li><strong>Trending</strong></li>
+                            <li><a href="https://www.newsweek.com/topic/donald-trump">Donald Trump</a></li>
+                            <li><a href="https://www.newsweek.com/topic/joe-biden">Joe Biden</a></li>
+                            <li><a href="https://www.newsweek.com/topic/china">China</a></li>
+                            <li><a href="https://www.newsweek.com/topic/coronavirus">Coronavirus</a></li>
+                            <li><a href="https://www.newsweek.com/topic/2020-election">2020 Election</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+        <div style="display: none;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </header>
+
+    <section id="main-content" class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="block-nw-home-featured-stories" class="block block-nw">
+                        <div class="content">
+                            <div class="feature2">
+                                <div class="block-title">
+                                    FEATURED STORIES</div>
+                                <article>
+                                    <div class="wrap">
+                                        <div class="category"><a href="/us">U.S.</a></div>
+                                        <div class="image">
+                                            <a
+                                                href="/trump-adviser-says-americans-get-1200-new-stimulus-bill-says-economys-going-north-not-south-1520567">
+                                                <picture width="100%" height="265" class="mapping-sm_md">
+                                                    <img src="https://d.newsweek.com/en/full/1613860/larry-kudlow-donald-trump.jpg?w=397&amp;h=265&amp;q=90&amp;f=41239a17a2524035580d8ec656eec2a8"
+                                                        alt="Larry Kudlow and Donald Trump"
+                                                        title="Larry Kudlow and Donald Trump" class="img-fluid">
+                                                </picture>
+                                            </a></div>
+                                    </div>
+                                    <h3>
+                                        <a
+                                            href="/trump-adviser-says-americans-get-1200-new-stimulus-bill-says-economys-going-north-not-south-1520567">Trump
+                                            Adviser Says Americans to Get $1,200 Through New Stimulus Bill</a></h3>
+                                    <div class="summary">"I do think the odds favor a big increase in job creation and a
+                                        big reduction in unemployment," White House economic adviser Larry Kudlow said.
+                                    </div>
+                                </article>
+                                <article>
+                                    <div class="wrap">
+                                        <div class="category"><a href="/us">U.S.</a></div>
+                                        <div class="image">
+                                            <a
+                                                href="/politicians-notable-figures-react-john-lewis-body-crossing-pettus-bridge-final-time-1520570">
+                                                <picture width="397" height="265" class="mapping-sm_md lazysize">
+                                                    <img data-src="https://d.newsweek.com/en/full/1613864/john-lewis.jpg?w=397&amp;h=265&amp;q=90&amp;f=96f769d877ad765828f65f53030be4b2"
+                                                        alt="John Lewis" title="John Lewis" width="397" height="265"
+                                                        class="img-fluid"
+                                                        src="https://d.newsweek.com/en/full/1613864/john-lewis.jpg?w=397&amp;h=265&amp;q=90&amp;f=96f769d877ad765828f65f53030be4b2">
+                                                </picture>
+                                            </a></div>
+                                    </div>
+                                    <h3>
+                                        <a
+                                            href="/politicians-notable-figures-react-john-lewis-body-crossing-pettus-bridge-final-time-1520570">Notable
+                                            Figures React to John Lewis' Body Crossing Pettus Bridge</a></h3>
+                                    <div class="summary">The late congressman and civil rights leader was honored during
+                                        a memorial ceremony in Selma, Alabama, on Sunday.</div>
+                                </article>
+                                <article>
+                                    <div class="wrap">
+                                        <div class="category"><a href="/my-turn">My Turn</a></div>
+                                        <div class="image">
+                                            <a href="/ive-been-teacher-23-years-wrote-will-because-covid19-1520304">
+                                                <picture width="397" height="265" class="mapping-sm_md lazysize">
+                                                    <img data-src="https://d.newsweek.com/en/full/1613810/teacher-pandemic-coronavirus-will.jpg?w=397&amp;h=265&amp;q=90&amp;f=cb784008102971c78a9b3d28e2c38577"
+                                                        alt="Teacher, Pandemic, Coronavirus, Will "
+                                                        title="Teacher, Pandemic, Coronavirus, Will " width="397"
+                                                        height="265" class="img-fluid"
+                                                        src="https://d.newsweek.com/en/full/1613810/teacher-pandemic-coronavirus-will.jpg?w=397&amp;h=265&amp;q=90&amp;f=cb784008102971c78a9b3d28e2c38577">
+                                                </picture>
+                                            </a></div>
+                                    </div>
+                                    <h3>
+                                        <a href="/ive-been-teacher-23-years-wrote-will-because-covid19-1520304">'I've
+                                            Been A Teacher For 23 Years—I Wrote My Will Because Of COVID-19'</a></h3>
+                                    <div class="summary">Going back to school should be about whether last year's
+                                        clothes still fit or if I can afford a new jacket. Instead, I'm thinking about
+                                        who I want to leave my estate to in my will.</div>
+                                </article>
+                                <article>
+                                    <div class="wrap">
+                                        <div class="category"><a href="/politics">Politics</a></div>
+                                        <div class="image">
+                                            <a
+                                                href="/trump-campaign-rnc-told-reagan-foundation-stop-using-former-presidents-likeness-fundraising-1520545">
+                                                <picture width="397" height="265" class="mapping-sm_md lazysize">
+                                                    <img data-src="https://d.newsweek.com/en/full/1613830/reagan-trump.png?w=397&amp;h=265&amp;q=90&amp;f=6b8bb6ac1487092084941654045f41d4"
+                                                        alt="Reagan and Trump" title="Reagan and Trump" width="397"
+                                                        height="265" class="img-fluid"
+                                                        src="https://d.newsweek.com/en/full/1613830/reagan-trump.png?w=397&amp;h=265&amp;q=90&amp;f=6b8bb6ac1487092084941654045f41d4">
+                                                </picture>
+                                            </a></div>
+                                    </div>
+                                    <h3>
+                                        <a
+                                            href="/trump-campaign-rnc-told-reagan-foundation-stop-using-former-presidents-likeness-fundraising-1520545">Trump
+                                            Told by Reagan Foundation to Stop Using Former President to Fundraise</a>
+                                    </h3>
+                                    <div class="summary">Although the RNC agreed to stop the fundraising, a Reagan
+                                        Foundation spokesperson said they may still get lawyers involved.</div>
+                                </article>
+                                <article>
+                                    <div class="wrap">
+                                        <div class="category"><a href="/world">World</a></div>
+                                        <div class="image">
+                                            <a
+                                                href="/north-koreas-kim-jong-un-declares-emergency-over-potential-covid-19-entering-country-1520566">
+                                                <picture width="397" height="265" class="mapping-sm_md lazysize">
+                                                    <img data-src="https://d.newsweek.com/en/full/1613848/north-korea-kim-jong-un-coronavirus-meeting.jpg?w=397&amp;h=265&amp;q=90&amp;f=fd453dc24f6183ef82341174d3ab2dce"
+                                                        alt="north, korea, kim, jong, un, coronavirus, meeting"
+                                                        title="north, korea, kim, jong, un, coronavirus, meeting"
+                                                        width="397" height="265" class="img-fluid"
+                                                        src="https://d.newsweek.com/en/full/1613848/north-korea-kim-jong-un-coronavirus-meeting.jpg?w=397&amp;h=265&amp;q=90&amp;f=fd453dc24f6183ef82341174d3ab2dce">
+                                                </picture>
+                                            </a></div>
+                                    </div>
+                                    <h3>
+                                        <a
+                                            href="/north-koreas-kim-jong-un-declares-emergency-over-potential-covid-19-entering-country-1520566">North
+                                            Korea Declares 'Emergency' Over Potential COVID-19 Entering Country</a></h3>
+                                    <div class="summary">A Korean Central News Agency report on a meeting chaired by
+                                        supreme leader Kim Jong Un said that "the dangerous situation in Kaesong City
+                                        that may lead to a deadly and destructive disaster."</div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="fd-c">
+                        <div id="block-nw-home-featured-story" class="block block-nw order-1">
+                            <div class="content">
+                                <div class="feature2">
+                                    <div class="block-title">
+                                        Top Story</div>
+                                    <article>
+                                        <div class="wrap">
+                                            <div class="category"><a href="/us">U.S.</a></div>
+                                            <div class="image">
+                                                <a
+                                                    href="/comeback-trump-needs-hasnt-happened-72-years-he-has-100-days-1520379">
+                                                    <picture width="591" height="364" class="mapping-md">
+                                                        <img src="https://d.newsweek.com/en/full/1613578/donald-trump.jpg?w=591&amp;h=364&amp;f=b4a1c93b5cbe86abeee7bfd5ed6e751d"
+                                                            alt="Donald trump" title="Donald trump" width="591"
+                                                            height="364" class="img-fluid">
+                                                    </picture>
+                                                </a></div>
+                                        </div>
+                                        <h1 class="h2"><a
+                                                href="/comeback-trump-needs-hasnt-happened-72-years-he-has-100-days-1520379">The
+                                                Comeback Trump Needs Hasn't Happened in 72 Years—And He Has 100 Days</a>
+                                        </h1>
+                                        <div class="summary">Donald Trump is in big trouble, according to national and
+                                            swing state polls. His only hope is a Harry Truman-esque, 1948-style
+                                            comeback, one that is highly unlikely.</div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="culture-stories order-2">
+                        <div class="block-title">
+                            <a href="/my-turn">My Turn</a></div>
+                        <div class="culture-items row">
+                            <div class="col-md-4 culture-item">
+                                <div class="image">
+                                    <a href="/caugh-middle-furious-bears-photography-1519067">
+                                        <picture width="397" height="397" class="mapping-mobile lazysize">
+                                            <img data-src="https://d.newsweek.com/en/full/1611259/wildlife-wildlife-photography-dangerous-animals.jpg?w=397&amp;h=397&amp;f=01c233c45d986a9145f886085c592b64"
+                                                alt="Wildlife, wildlife photography, dangerous animals "
+                                                title="Wildlife, wildlife photography, dangerous animals " width="397"
+                                                height="397" class="img-fluid"
+                                                src="https://d.newsweek.com/en/full/1611259/wildlife-wildlife-photography-dangerous-animals.jpg?w=397&amp;h=397&amp;f=01c233c45d986a9145f886085c592b64">
+                                        </picture>
+                                    </a></div>
+                                <div class="info">
+                                    <div class="title">
+                                        <a href="/caugh-middle-furious-bears-photography-1519067">'I've Been Caught
+                                            Between 3 Angry Bears And Lost A Camera To A Lion'</a></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 culture-item">
+                                <div class="image">
+                                    <a
+                                        href="/im-surgeon-who-had-breast-cancerthis-what-you-should-know-about-treatment-1519346">
+                                        <picture width="397" height="397" class="mapping-mobile lazysize">
+                                            <img data-src="https://d.newsweek.com/en/full/1611712/breast-cancer-cancer-surgery-breast-reconstruction.jpg?w=397&amp;h=397&amp;f=837390644437e3b7dfbf5ca33012ebff"
+                                                alt="Breast Cancer, cancer, surgery, breast reconstruction"
+                                                title="Breast Cancer, cancer, surgery, breast reconstruction"
+                                                width="397" height="397" class="img-fluid"
+                                                src="https://d.newsweek.com/en/full/1611712/breast-cancer-cancer-surgery-breast-reconstruction.jpg?w=397&amp;h=397&amp;f=837390644437e3b7dfbf5ca33012ebff">
+                                        </picture>
+                                    </a></div>
+                                <div class="info">
+                                    <div class="title">
+                                        <a
+                                            href="/im-surgeon-who-had-breast-cancerthis-what-you-should-know-about-treatment-1519346">'I'm
+                                            A Surgeon Who Had Breast Cancer—You Should Know This About Treatment'</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 culture-item">
+                                <div class="image">
+                                    <a href="/my-husband-i-adopted-5-siblings-1519754">
+                                        <picture width="397" height="397" class="mapping-mobile lazysize">
+                                            <img data-src="https://d.newsweek.com/en/full/1612574/adoption-adoptive-parents-texas-family.png?w=397&amp;h=397&amp;f=31b4cfc891f849c47d9db03669bbbcf0"
+                                                alt="Adoption, Adoptive Parents, Texas, Family"
+                                                title="Adoption, Adoptive Parents, Texas, Family" width="397"
+                                                height="397" class="img-fluid"
+                                                src="https://d.newsweek.com/en/full/1612574/adoption-adoptive-parents-texas-family.png?w=397&amp;h=397&amp;f=31b4cfc891f849c47d9db03669bbbcf0">
+                                        </picture>
+                                    </a></div>
+                                <div class="info">
+                                    <div class="title">
+                                        <a href="/my-husband-i-adopted-5-siblings-1519754">'My Husband And I Adopted 5
+                                            Siblings'</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-title">
+                            <a href="/culture">Culture &amp; Travel</a></div>
+                        <div class="row culture-items">
+                            <div class="col-md-4 culture-item">
+                                <div class="image">
+                                    <a href="/2020/08/07/vacation-glass-cocktails-around-world-1520050.html">
+                                        <picture width="397" height="397" class="mapping-mobile lazysize">
+                                            <img data-src="https://d.newsweek.com/en/full/1611373/cul-uncharted-cocktails-02.jpg?w=397&amp;h=397&amp;f=c52e62312873af75383efddc4cf79fe7"
+                                                alt="CUL_Uncharted_Cocktails_02" title="CUL_Uncharted_Cocktails_02"
+                                                width="397" height="397" class="img-fluid"
+                                                src="https://d.newsweek.com/en/full/1611373/cul-uncharted-cocktails-02.jpg?w=397&amp;h=397&amp;f=c52e62312873af75383efddc4cf79fe7">
+                                        </picture>
+                                    </a>
+                                    <div class="tags"><a href="topic/cocktails" class="active">Cocktails</a></div>
+                                </div>
+                                <div class="info">
+                                    <div class="title">
+                                        <a href="/2020/08/07/vacation-glass-cocktails-around-world-1520050.html">Vacation
+                                            in a Glass: Cocktails Around the World</a></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 culture-item">
+                                <div class="image">
+                                    <a href="/where-we-all-want-travel-2021-according-google-1519781">
+                                        <picture width="397" height="397" class="mapping-mobile lazysize">
+                                            <img data-src="https://d.newsweek.com/en/full/1612349/mount-fuji.jpg?w=397&amp;h=397&amp;f=1caeb7f1faef97354f4a1800a05d9e88"
+                                                alt="Mount Fuji " title="Mount Fuji " width="397" height="397"
+                                                class="img-fluid"
+                                                src="https://d.newsweek.com/en/full/1612349/mount-fuji.jpg?w=397&amp;h=397&amp;f=1caeb7f1faef97354f4a1800a05d9e88">
+                                        </picture>
+                                    </a>
+                                    <div class="tags"><a href="topic/travel" class="active">Travel</a></div>
+                                </div>
+                                <div class="info">
+                                    <div class="title">
+                                        <a href="/where-we-all-want-travel-2021-according-google-1519781">The Top
+                                            Destinations Travelers Want to Escape to in 2021 </a></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 culture-item">
+                                <div class="image">
+                                    <a href="/2020/07/24/summer-reads-travel-that-cant-canceled-1517772.html">
+                                        <picture width="397" height="397" class="mapping-mobile lazysize">
+                                            <img data-src="https://d.newsweek.com/en/full/1610636/cul-banner-summer-reads.jpg?w=397&amp;h=397&amp;f=0f463b81f8cd6f8bd9f93eeb254aa896"
+                                                alt="CUL_BANNER_Summer_Reads" title="CUL_BANNER_Summer_Reads"
+                                                width="397" height="397" class="img-fluid"
+                                                src="https://d.newsweek.com/en/full/1610636/cul-banner-summer-reads.jpg?w=397&amp;h=397&amp;f=0f463b81f8cd6f8bd9f93eeb254aa896">
+                                        </picture>
+                                    </a>
+                                    <div class="tags"><a href="topic/books" class="active">Books</a></div>
+                                </div>
+                                <div class="info">
+                                    <div class="title">
+                                        <a href="/2020/07/24/summer-reads-travel-that-cant-canceled-1517772.html">New
+                                            Summer Books: Escapes That Can't Be Canceled</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="block-nw-home-featured-more"
+                        class="block block-nw order-3 __web-inspector-hide-shortcut__">
+                        <div class="content">
+                            <div class="feature2">
+                                <div class="block-title">
+                                    <a href=" ">MORE STORIES</a></div>
+                                <article class="row clearfix">
+                                    <div class="image col-md-2">
+                                        <a
+                                            href="/most-voters-florida-michigan-arizona-disapprove-trumps-handling-covid-racial-inequality-1520553">
+                                            <picture width="95" height="95" class="mapping-sm_thumb lazysize">
+                                                 <img
+                                                    data-src="https://d.newsweek.com/en/full/1613836/donald-trump.jpg?w=95&amp;h=95&amp;f=40db8f460840cc5c19719a80d7459ea0"
+                                                    alt="Donald Trump" title="Donald Trump" width="95" height="95"
+                                                    class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1613836/donald-trump.jpg?w=95&amp;h=95&amp;f=40db8f460840cc5c19719a80d7459ea0">
+                                            </picture>
+                                        </a></div>
+                                        <div class="col-md-10">
+                                            <h4><a
+                                                href="/most-voters-florida-michigan-arizona-disapprove-trumps-handling-covid-racial-inequality-1520553">Florida,
+                                                Michigan, Arizona Voters Disapprove of Trump's Handling of COVID: Polls</a>
+                                            </h4>
+                                            <div class="summary">Democratic presidential candidate Joe Biden also leads Trump by
+                                                significant margins in each of the battleground states.</div>
+                                        </div>
+
+                                    
+                                </article>
+                                <article class="row clearfix">
+                                    <div class="image col-md-2">
+                                        <a
+                                            href="/hong-kong-official-says-next-2-weeks-crucial-mitigation-city-battles-another-covid-spike-1520551">
+                                            <picture width="95" height="95" class="mapping-sm_thumb lazysize">
+                                                 <img
+                                                    data-src="https://d.newsweek.com/en/full/1613841/hong-kong-covid-19.jpg?w=95&amp;h=95&amp;f=aaed823e94bad887ac0b528c59bf1d27"
+                                                    alt="Hong Kong COVID-19" title="Hong Kong COVID-19" width="95"
+                                                    height="95" class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1613841/hong-kong-covid-19.jpg?w=95&amp;h=95&amp;f=aaed823e94bad887ac0b528c59bf1d27">
+                                            </picture>
+                                        </a></div>
+                                    <div class="col-md-10">
+                                        <h4><a
+                                            href="/hong-kong-official-says-next-2-weeks-crucial-mitigation-city-battles-another-covid-spike-1520551">Hong
+                                            Kong Official Says Next 2 Weeks 'Crucial,' as COVID Spike Persists</a></h4>
+                                        <div class="summary">Hong Kong's chief secretary urged city residents to remain in
+                                            their homes, avoid social contact, and refrain from dining out as much as
+                                            possible.</div>
+                                    </div>
+                                </article>
+                                <article class="clearfix row">
+                                    <div class="image col-md-2">
+                                        <a
+                                            href="/federal-officers-pepper-spray-photojournalist-military-veteran-during-portland-protest-video-shows-1520548">
+                                            <picture width="95" height="95" class="mapping-sm_thumb lazysize">
+                                                 <img
+                                                    data-src="https://d.newsweek.com/en/full/1613833/portland-protests.jpg?w=95&amp;h=95&amp;f=507c717513f64835527e89c7f248841c"
+                                                    alt="Portland protests" title="Portland protests" width="95"
+                                                    height="95" class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1613833/portland-protests.jpg?w=95&amp;h=95&amp;f=507c717513f64835527e89c7f248841c">
+                                            </picture>
+                                        </a></div>
+                                    <div class="col-md-10">
+                                        <h4><a
+                                                href="/federal-officers-pepper-spray-photojournalist-military-veteran-during-portland-protest-video-shows-1520548">Federal
+                                                Officers Pepper Spray Combat Medic From Vietnam War, Video Shows</a></h4>
+                                        <div class="summary">The video shows armed law enforcement officers pepper spraying
+                                            photojournalist and military veteran Mike Hastie during a Portland protest.
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="clearfix row">
+                                    <div class="image col-md-2">
+                                        <a href="/trump-supporters-banned-walmart-nazi-flag-masks-1520538">
+                                            <picture width="95" height="95" class="mapping-sm_thumb lazysize">
+                                                 <img
+                                                    data-src="https://d.newsweek.com/en/full/1613827/walmart.jpg?w=95&amp;h=95&amp;f=6b6c4c322c8365f90866797267e26245"
+                                                    alt="Walmart " title="Walmart " width="95" height="95"
+                                                    class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1613827/walmart.jpg?w=95&amp;h=95&amp;f=6b6c4c322c8365f90866797267e26245">
+                                            </picture>
+                                        </a></div>
+                                    <div class="col-md-10">
+                                        <h4><a href="/trump-supporters-banned-walmart-nazi-flag-masks-1520538">Trump
+                                                Supporters Banned by Walmart for Wearing Nazi Flag Masks </a></h4>
+                                        <div class="summary">Raphaela Mueller's video of a couple going through the checkout
+                                            lane of a Walmart store in Marshall, Minnesota, wearing face coverings with
+                                            swastikas on them went viral.</div>
+                                    </div>
+                                </article>
+                                <article class="clearfix row">
+                                    <div class="image col-md-2">
+                                        <a
+                                            href="/white-house-officials-defend-covid-testing-process-despite-slow-turnaround-we-are-trying-bring-1520559">
+                                            <picture width="95" height="95" class="mapping-sm_thumb lazysize">
+                                                <img
+                                                    data-src="https://d.newsweek.com/en/full/1613851/covid-19-testing.jpg?w=95&amp;h=95&amp;f=f27d4839feef32d61d3a79e65e42792f"
+                                                    alt="COVID-19 Testing" title="COVID-19 Testing" width="95"
+                                                    height="95" class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1613851/covid-19-testing.jpg?w=95&amp;h=95&amp;f=f27d4839feef32d61d3a79e65e42792f">
+                                            </picture>
+                                        </a></div>
+                                    <div class="col-md-10">
+                                        <h4><a
+                                                href="/white-house-officials-defend-covid-testing-process-despite-slow-turnaround-we-are-trying-bring-1520559">White
+                                                House Officials Defend COVID Testing Process Despite Slow Turnaround</a>
+                                        </h4>
+                                        <div class="summary">"We're testing more than any other country in the world," said
+                                            White House Chief of Staff Mark Meadows on Sunday.</div>
+                                    </div>
+                                </article>
+                                <article class="clearfix row">
+                                    <div class="image col-md-2">
+                                        <a
+                                            href="/protestors-march-illinois-mayors-house-youre-not-going-enjoy-your-weekend-1520541">
+                                            <picture width="95" height="95" class="mapping-sm_thumb lazysize">
+                                              <img
+                                                    data-src="https://d.newsweek.com/en/full/1613824/illinois-protest.jpg?w=95&amp;h=95&amp;f=cbd19407de3de323a0bc3fc4efdca261"
+                                                    alt="Illinois protest" title="Illinois protest" width="95"
+                                                    height="95" class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1613824/illinois-protest.jpg?w=95&amp;h=95&amp;f=cbd19407de3de323a0bc3fc4efdca261">
+                                            </picture>
+                                        </a></div>
+                                    <div class="col-md-10">
+                                        <h4><a
+                                                href="/protestors-march-illinois-mayors-house-youre-not-going-enjoy-your-weekend-1520541">Protests
+                                                Reach Ill. Mayor's Home: 'You're Not Going to Enjoy Your Weekend'</a></h4>
+                                        <div class="summary">Rockford Mayor Tom McNamara said he would be willing to talk to
+                                            demonstrators, but not in front of his house.</div>
+                                    </div>
+                                </article>
+                                <article class="clearfix row">
+                                    <div class="image col-md-2">
+                                        <a href="/second-stimulus-check-august-1520542">
+                                            <picture width="95" height="95" class="mapping-sm_thumb lazysize">
+                                               <img
+                                                    data-src="https://d.newsweek.com/en/full/1613837/steve-mnuchin.jpg?w=95&amp;h=95&amp;f=3418ed56ddcd95ea97b186f205b9ff5c"
+                                                    alt="Steve Mnuchin " title="Steve Mnuchin " width="95" height="95"
+                                                    class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1613837/steve-mnuchin.jpg?w=95&amp;h=95&amp;f=3418ed56ddcd95ea97b186f205b9ff5c">
+                                            </picture>
+                                        </a></div>
+                                    <div class="col-md-10">
+                                        <h4><a href="/second-stimulus-check-august-1520542">Second Stimulus Check Coming in
+                                                August, But Many Haven't Received First</a></h4>
+                                        <div class="summary">Treasury Secretary Steven Mnuchin said the next coronavirus
+                                            relief package is set to be rolled out on Monday.</div>
+                                    </div>
+                                </article>
+                                <article class="clearfix row">
+                                    <div class="image col-md-2">
+                                        <a
+                                            href="/more-chinese-consulates-may-well-closed-ted-cruz-warns-tensions-escalate-1520575">
+                                            <picture width="95" height="95" class="mapping-sm_thumb lazysize">
+                                                <img
+                                                    data-src="https://d.newsweek.com/en/full/1613865/ted-cruz.jpg?w=95&amp;h=95&amp;f=ff673e6ee225e0aef1df71de3c7a40fe"
+                                                    alt="Ted Cruz" title="Ted Cruz" width="95" height="95"
+                                                    class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1613865/ted-cruz.jpg?w=95&amp;h=95&amp;f=ff673e6ee225e0aef1df71de3c7a40fe">
+                                            </picture>
+                                        </a></div>
+                                    <div class="col-md-10">
+                                        <h4><a
+                                                href="/more-chinese-consulates-may-well-closed-ted-cruz-warns-tensions-escalate-1520575">More
+                                                Chinese Consulates May Well Be Closed, Cruz Warns as Tensions Escalate</a>
+                                        </h4>
+                                        <div class="summary">"I have made the case that China poses the greatest
+                                            geopolitical threat to the United States for the next century," the Republican
+                                            senator said.</div>
+                                    </div>
+                                </article>
+                                <article class="clearfix row">
+                                    <div class="image col-md-2">
+                                        <a
+                                            href="/40-people-have-covid-after-attending-revival-alabama-church-we-knew-what-we-were-getting-1520563">
+                                            <picture width="95" height="95" class="mapping-sm_thumb lazysize">
+                                               <img
+                                                    data-src="https://d.newsweek.com/en/full/1613858/church-covid-19.jpg?w=95&amp;h=95&amp;f=4f1f68dfc06639c937d1a7cf2e8ff3ab"
+                                                    alt="Church COVID-19" title="Church COVID-19" width="95" height="95"
+                                                    class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1613858/church-covid-19.jpg?w=95&amp;h=95&amp;f=4f1f68dfc06639c937d1a7cf2e8ff3ab">
+                                            </picture>
+                                        </a></div>
+                                    <div class="col-md-10">
+                                        <h4><a
+                                                href="/40-people-have-covid-after-attending-revival-alabama-church-we-knew-what-we-were-getting-1520563">40
+                                                People Have COVID After Attending Revival at Alabama Church</a></h4>
+                                        <div class="summary">A week-long revival event at Warrior Creek Missionary Baptist
+                                            Church was shut down early after an attendee tested positive for the novel
+                                            coronavirus.</div>
+                                    </div>
+                                </article>
+                                <article class="clearfix row">
+                                    <div class="image col-md-2">
+                                        <a href="/hampton-inn-ice-detainees-hotels-1520532">
+                                            <picture width="95" height="95" class="mapping-sm_thumb lazysize">
+                                                <img
+                                                    data-src="https://d.newsweek.com/en/full/1613817/hampton-inn.jpg?w=95&amp;h=95&amp;f=242914f4833148fddb99cc38e8a97136"
+                                                    alt="Hampton Inn" title="Hampton Inn" width="95" height="95"
+                                                    class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1613817/hampton-inn.jpg?w=95&amp;h=95&amp;f=242914f4833148fddb99cc38e8a97136">
+                                            </picture>
+                                        </a></div>
+                                    <div class="col-md-10">
+                                        <h4><a href="/hampton-inn-ice-detainees-hotels-1520532">Hampton Inn Says it Didn't
+                                                Know Govt. Detained Kids at Hotels, Cancels Deal</a></h4>
+                                        <div class="summary">Hilton, which owns Hampton, condemned the use of its hotels to
+                                            detain immigrant children.</div>
+                                    </div>
+                                </article>
+                                <article class="clearfix row">
+                                    <div class="image col-md-2">
+                                        <a href="/chicago-mayor-blame-states-no-gun-control-violence-1520560">
+                                            <picture width="95" height="95" class="mapping-sm_thumb lazysize">
+                                                <img
+                                                    data-src="https://d.newsweek.com/en/full/1613879/lori-lightfoot.jpg?w=95&amp;h=95&amp;f=ea24985c5b6f7d962fdfadfe5014a16e"
+                                                    alt="Lori Lightfoot" title="Lori Lightfoot" width="95" height="95"
+                                                    class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1613879/lori-lightfoot.jpg?w=95&amp;h=95&amp;f=ea24985c5b6f7d962fdfadfe5014a16e">
+                                            </picture>
+                                        </a></div>
+                                    <div class="col-md-10">
+                                        <h4><a href="/chicago-mayor-blame-states-no-gun-control-violence-1520560">Chicago
+                                                Mayor Blames States With 'No Gun Control' for City's Violence</a></h4>
+                                        <div class="summary">Chicago Mayor Lori Lightfoot called the president's offer to
+                                            "solve" Chicago's soaring murder rate by sending in 50,000 to 75,000 federal
+                                            personnel to the city "classic Trump hyperbole."</div>
+                                    </div>
+                                </article>
+                                <article class="clearfix row">
+                                    <div class="image col-md-2">
+                                        <a href="/voter-registration-2020-election-vote-1520350">
+                                            <picture width="95" height="95" class="mapping-sm_thumb lazysize">
+                                                 <img
+                                                    data-src="https://d.newsweek.com/en/full/1613220/its-100-days-until-election.jpg?w=95&amp;h=95&amp;f=1d88b84cf6c9a0f16fabfa59632c56a0"
+                                                    alt="It's 100 Days Until The Election"
+                                                    title="It's 100 Days Until The Election" width="95" height="95"
+                                                    class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1613220/its-100-days-until-election.jpg?w=95&amp;h=95&amp;f=1d88b84cf6c9a0f16fabfa59632c56a0">
+                                            </picture>
+                                        </a></div>
+                                    <div class="col-md-10">
+                                        <h4><a href="/voter-registration-2020-election-vote-1520350">It's 100 Days Until The
+                                                Election, Are You Registered to Vote?</a></h4>
+                                        <div class="summary">The 2020 presidential election will take place on November 3.
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="the-debate">
+                        <div class="subfeature2">
+                            <div class="block-title">
+                                <a href="https://www.newsweek.com/the-debate">The debate</a></div>
+                            <div class="debate-item c-r">
+                                <div class="ai-c row">
+                                    <div class="col-sm-3 fn image headshot order-1">
+                                        <a href="/everyone-benefits-private-equitys-value-creation-opinion-1519725">
+                                            <picture width="63" height="63">
+                                                <img data-src="https://d.newsweek.com/en/full/1597218/m-todd-henderson.png?w=150&amp;h=150&amp;f=cb3ba77c6e54258fd9fa084f35f53b2a"
+                                                    alt="M. Todd Henderson" title="M. Todd Henderson" width="150"
+                                                    height="150" class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1597218/m-todd-henderson.png?w=150&amp;h=150&amp;f=cb3ba77c6e54258fd9fa084f35f53b2a">
+                                            </picture>
+                                        </a></div>
+                                    <div class="info order-2 col-sm-9">
+                                        <div class="title"><a
+                                                href="/everyone-benefits-private-equitys-value-creation-opinion-1519725">Everyone
+                                                Benefits From Private Equity's Value Creation</a></div>
+                                        <div class="byline">
+                                            <span>By</span>
+                                            M. Todd Henderson</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="deco">
+                                <div class="c-vs">VS</div>
+                            </div>
+                            <div class="debate-item c-b">
+                                <div class="ai-c row">
+                                    <div class="col-sm-3 fn image headshot order-2">
+                                        <a href="/private-equity-captures-rather-creates-value-opinion-1519748">
+                                            <picture width="63" height="63">
+                                                <img data-src="https://d.newsweek.com/en/full/1612271/oren-cass.png?w=150&amp;h=150&amp;f=52efa4c6426ab3f067c65ab237e5a950"
+                                                    alt="Oren Cass" title="Oren Cass" width="150" height="150"
+                                                    class="img-fluid"
+                                                    src="https://d.newsweek.com/en/full/1612271/oren-cass.png?w=150&amp;h=150&amp;f=52efa4c6426ab3f067c65ab237e5a950">
+                                            </picture>
+                                        </a></div>
+                                    <div class="info order-1 col-sm-9">
+                                        <div class="title"><a
+                                                href="/private-equity-captures-rather-creates-value-opinion-1519748">Private
+                                                Equity Captures Rather Than Creates Value</a></div>
+                                        <div class="byline">
+                                            <span>By</span>
+                                            Oren Cass</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
