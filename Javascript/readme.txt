@@ -1,4 +1,4 @@
-Name:Suntiradh Kesbungkan Nickname:Dean Number:17 Group name: N/A Guthub: https://github.com/Suntiradh
+Name:Suntiradh Kesbungkan Nickname:Dean Number:17 Group name: N/A Github: https://github.com/Suntiradh
 
 https://ibb.co/vqPzpy7 //link capture Free Javascript Codecamp practice done.
 
