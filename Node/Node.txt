@@ -1,0 +1,17 @@
+**https://www.freecodecamp.org/learn เรียนตรง API & Microservice Certification
+
+
+Name:Suntiradh Kesbungkan Nickname:Dean Number:17 Group name: N/A Github: https://github.com/Suntiradh
+
+https://ibb.co/H2cYrRb //link capture Free APIs and Microservice Codecamp practice done.
+
+Freecodecamp APIs and Microservice  practice conclusion: From the lessons learned which consist of
+
+1.Managing Packages with NPM
+2.Basic Node and Express
+3.MongoDB and Mongoose
+4.APIs and Microservice Project
+
+From what I have learned about doing back-up exercises Make it known about extracting APIs from other resources. 
+And applied to our work And from learning this, we understand how the database works in connection with URL. Lastly, 
+there is a mini project that can be used more fluently and can be applied to my work in the future.
